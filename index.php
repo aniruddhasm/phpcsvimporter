@@ -1,23 +1,16 @@
 <?php 
-
-//ini_set('display_errors', '1');
-//error_reporting(E_ALL);
-
 getcsv_PHP();
  
 function getcsv_PHP(){
-
+	$final_arr = array();
+	$inputFilename = 'students.csv'; // the location of the csv file.
 	include 'db_config.php';
-
 	$conn = new mysqli($db_host,$db_user, $db_password, $db_name);
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	}
-	
-	$inputFilename = 'students.csv';
-    $final_arr = array();
-	echo "Data imported started<br/>";
-    if (($handle = fopen($inputFilename, "r")) !== FALSE){
+	echo "Data importing started<br/><br/>";
+    	if (($handle = fopen($inputFilename, "r")) !== FALSE){
         	$length = 1000;
         	$delimiter = ",";
         
@@ -30,9 +23,9 @@ function getcsv_PHP(){
 				echo "Inserted ". $i. " record<br/>";
 			}
 			$i++;
-        }
-        fclose($handle);
-    }
-    echo "Data imported successfully.";
+        	}
+        	fclose($handle);
+    	}
+    	echo "Data imported successfully.";
 }
 ?>
