@@ -1,5 +1,5 @@
-# CSV importer in PHP
-A simple php script to import data from csv file to myql database.
+# PHP script to import CSV data into MySQL database
+A simple PHP script to import CSV data into MySQL database.
 
 # Prerequisites
 ```
